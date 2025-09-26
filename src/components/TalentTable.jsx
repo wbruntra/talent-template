@@ -11,9 +11,6 @@ const TalentTable = ({ data, onDataChange }) => {
       validation = validateTalentName(value)
     } else if (field.startsWith('social')) {
       validation = validateSocialURL(value)
-    } else {
-      // Tags field - no validation needed for now
-      validation = { isValid: true, error: null }
     }
 
     setErrors((prev) => ({
@@ -47,7 +44,6 @@ const TalentTable = ({ data, onDataChange }) => {
       social2: '',
       social3: '',
       social4: '',
-      tags: '',
     }
     onDataChange([...data, newRow])
   }, [data, onDataChange])
@@ -88,7 +84,6 @@ const TalentTable = ({ data, onDataChange }) => {
               <th style={{ minWidth: '200px' }}>Social 2</th>
               <th style={{ minWidth: '200px' }}>Social 3</th>
               <th style={{ minWidth: '200px' }}>Social 4</th>
-              <th style={{ minWidth: '150px' }}>Tags</th>
               <th style={{ width: '80px' }}>Actions</th>
             </tr>
           </thead>
@@ -182,16 +177,6 @@ const TalentTable = ({ data, onDataChange }) => {
                       <div className="error-tooltip">{getErrorForField(rowIndex, 'social4')}</div>
                     )}
                   </div>
-                </td>
-
-                <td>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={row.tags}
-                    onChange={(e) => handleCellChange(rowIndex, 'tags', e.target.value)}
-                    placeholder="Tags (use comma to separate multiple)"
-                  />
                 </td>
 
                 <td>

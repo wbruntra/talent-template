@@ -34,37 +34,32 @@
 /* Fixed column widths */
 .table th:nth-child(1),
 .table td:nth-child(1) {
-  width: 150px;
+  width: 180px;
 }
 
 .table th:nth-child(2),
 .table td:nth-child(2) {
-  width: 200px;
+  width: 220px;
 }
 
 .table th:nth-child(3),
 .table td:nth-child(3) {
-  width: 200px;
+  width: 220px;
 }
 
 .table th:nth-child(4),
 .table td:nth-child(4) {
-  width: 200px;
+  width: 220px;
 }
 
 .table th:nth-child(5),
 .table td:nth-child(5) {
-  width: 200px;
+  width: 220px;
 }
 
 .table th:nth-child(6),
 .table td:nth-child(6) {
-  width: 150px;
-}
-
-.table th:nth-child(7),
-.table td:nth-child(7) {
-  width: 80px;
+  width: 100px;
 }
 
 /* Input styling */
@@ -178,13 +173,8 @@
   color: #58151c;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .container-fluid {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
+/* Responsive adjustments for tablet and small desktop */
+@media (max-width: 1199.98px) and (min-width: 992px) {
   .talent-table-container {
     padding: 1rem;
   }
@@ -193,11 +183,6 @@
   .table td {
     padding: 0.5rem 0.25rem;
     font-size: 0.875rem;
-  }
-  
-  .btn {
-    font-size: 0.875rem;
-    padding: 0.375rem 0.75rem;
   }
 }
 
@@ -260,4 +245,76 @@
 .table .form-control {
   width: 100%;
   min-width: 0;
+}
+
+/* Mobile Card Styling */
+.talent-card {
+  border: 1px solid #dee2e6;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.talent-card:hover {
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.talent-card .card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.75rem 1rem;
+}
+
+.talent-card .card-body {
+  padding: 1rem;
+}
+
+.talent-card .form-label {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #495057;
+}
+
+.talent-card .form-control {
+  margin-bottom: 0;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 991.98px) {
+  .container-fluid {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .talent-card {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .talent-card .card-body {
+    padding: 0.75rem;
+  }
+  
+  .btn {
+    font-size: 0.875rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 575.98px) {
+  .talent-card .card-body {
+    padding: 0.5rem;
+  }
+  
+  .talent-card .form-label {
+    font-size: 0.85rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
 }

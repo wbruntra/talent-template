@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import TalentTable from './components/TalentTable'
+import { useState } from 'react'
+import ResponsiveTalentView from './components/ResponsiveTalentView'
 import { downloadCSV, validateAllData } from './utils/csvExport'
 import { saveTalentData, loadTalentData, clearSavedData, getFormattedLastSaved } from './utils/localStorage'
 import { useAutoSave } from './hooks/useAutoSave'
@@ -15,7 +15,6 @@ function App() {
       social2: 'https://www.youtube.com/@JaneDoe',
       social3: '',
       social4: '',
-      tags: '',
     },
     {
       talentName: 'John Smith',
@@ -23,7 +22,6 @@ function App() {
       social2: '',
       social3: '',
       social4: '',
-      tags: '',
     },
   ];
 
@@ -67,7 +65,6 @@ function App() {
         social2: '',
         social3: '',
         social4: '',
-        tags: '',
       }];
       
       setTalentData(emptyData);
@@ -135,7 +132,7 @@ function App() {
             </div>
           )}
 
-          <TalentTable data={talentData} onDataChange={setTalentData} />
+          <ResponsiveTalentView data={talentData} onDataChange={setTalentData} />
 
           <div className="mt-4">
             <div className="row">

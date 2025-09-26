@@ -8,7 +8,7 @@ export function downloadCSV(data, filename = 'talent-data.csv') {
   const validData = data.filter(row => row.talentName && row.talentName.trim() !== '');
   
   // CSV headers matching the template format
-  const headers = ['Talent Name', 'Primary Social', 'Social 2', 'Social 3', 'Social 4', 'tags'];
+  const headers = ['Talent Name', 'Primary Social', 'Social 2', 'Social 3', 'Social 4'];
   
   // Convert data to CSV rows
   const csvRows = [
@@ -21,8 +21,7 @@ export function downloadCSV(data, filename = 'talent-data.csv') {
         escapeCsvField(row.primarySocial || ''),
         escapeCsvField(row.social2 || ''),
         escapeCsvField(row.social3 || ''),
-        escapeCsvField(row.social4 || ''),
-        escapeCsvField(row.tags || '')
+        escapeCsvField(row.social4 || '')
       ];
       return csvRow.join(',');
     })
