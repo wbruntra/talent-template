@@ -95,6 +95,17 @@
   transition: all 0.15s ease-in-out;
 }
 
+.btn-outline-info {
+  color: #0dcaf0;
+  border-color: #0dcaf0;
+}
+
+.btn-outline-info:hover {
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+  color: white;
+}
+
 .btn-success {
   background-color: #198754;
   border-color: #198754;
