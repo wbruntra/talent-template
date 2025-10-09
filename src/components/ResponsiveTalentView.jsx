@@ -6,7 +6,7 @@ const ResponsiveTalentView = ({ data, onDataChange }) => {
   const [errors, setErrors] = useState({});
 
   const validateField = useCallback((rowIndex, field, value) => {
-    let validation;
+    let validation = { isValid: true, error: null };
 
     if (field === 'talentName') {
       validation = validateTalentName(value);
